@@ -1,143 +1,160 @@
 const projects = [
   {
     name: "AgentBox",
-    description: "Multi-tenant SaaS for AI agents. 50+ templates, pipelines, WhatsApp/SMS channels, social media posting, internal chat, document generation, and integrations with HubSpot, Slack, Notion, Bitrix24.",
+    description: "Multi-tenant SaaS for AI agents. 50+ templates, pipelines, WhatsApp/SMS, social media, internal chat, document generation, integrations.",
     stack: ["Next.js", "Supabase", "Gemini", "Tailwind", "Vercel"],
     url: "https://agentbox.com.br",
-    stats: "144 API routes / 62 DB migrations / 14 cron jobs",
+    stats: "144 endpoints / 62 migrations",
   },
   {
     name: "CreevoHub",
-    description: "Hiring platform for the construction industry with NR/medical compliance, multi-tenant company dashboards, and AI-powered candidate screening.",
+    description: "Hiring platform for construction industry. NR/medical compliance, multi-tenant dashboards, AI candidate screening.",
     stack: ["Next.js", "Supabase", "Tailwind", "Vercel"],
-    url: null,
-    stats: "Multi-tenant / RBAC / Compliance engine",
+    url: "https://creevo.com.br",
+    stats: "Multi-tenant / RBAC",
+  },
+  {
+    name: "Creevo Academy",
+    description: "Training platform specialized in Normas Regulamentadoras. Course management, certifications, company dashboards.",
+    stack: ["Next.js", "Supabase", "Tailwind", "Vercel"],
+    url: "https://creevoacademy.com.br",
+    stats: "LMS / Certifications",
+  },
+  {
+    name: "TAS Ocupacional",
+    description: "Occupational health company website. Service showcase, contact integration, premium design.",
+    stack: ["React", "Vite", "Framer Motion", "Vercel"],
+    url: "https://tasocupacional.com.br",
+    stats: "Landing / WhatsApp integration",
   },
   {
     name: "ToxBets",
-    description: "Online casino platform with Texas Hold'em poker (AI bots, tournaments, chip economy), Mines, Blackjack, Double, and 7+ more games. Real-time sync via SSE.",
+    description: "Casino platform with Texas Hold'em poker (AI bots, tournaments, chip economy), Mines, Blackjack, Double, and 7+ more games. Real-time multiplayer via SSE.",
     stack: ["Next.js", "Redis", "SSE", "Tailwind"],
     url: null,
-    stats: "10+ games / Elo ranking / Real-time multiplayer",
-  },
-  {
-    name: "Tox Spy",
-    description: "Local OSINT investigation tool combining HIBP breach lookups, Maltego-style entity mapping, and Gemini AI analysis. Built for law enforcement use cases.",
-    stack: ["Next.js", "Gemini AI", "HIBP API", "Maltego"],
-    url: null,
-    stats: "OSINT / Breach detection / Entity mapping",
+    stats: "10+ games / Elo ranking",
   },
   {
     name: "AppForm",
-    description: "SaaS for clinic management with AI-powered WhatsApp bot for appointment scheduling, Google Calendar sync, and patient management.",
+    description: "SaaS for clinic management. AI-powered WhatsApp bot for appointment scheduling, Google Calendar sync, patient management.",
     stack: ["Next.js", "Supabase", "Twilio", "Google Calendar"],
     url: null,
-    stats: "WhatsApp bot / Calendar sync / Multi-clinic",
+    stats: "WhatsApp bot / Multi-clinic",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Header */}
-      <header className="px-6 sm:px-10 pt-12 sm:pt-16 pb-6">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center gap-2 font-mono text-accent text-sm mb-6">
-            <span className="inline-block w-2 h-4 bg-accent" style={{ animation: "blink 1s step-end infinite" }} />
-            <span>~/tox</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-sans font-semibold tracking-tight mb-3">
-            Tox
-          </h1>
-          <p className="text-muted font-mono text-sm sm:text-base leading-relaxed max-w-xl">
-            Full-stack developer. I build SaaS platforms, AI systems, and real-time applications from scratch — architecture, database, API, frontend, deploy.
+    <div className="flex flex-col min-h-screen font-mono">
+      {/* Scanline overlay */}
+      <div
+        className="pointer-events-none fixed inset-0 z-50 opacity-[0.03]"
+        style={{
+          background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.05) 2px, rgba(255,255,255,0.05) 4px)",
+        }}
+      />
+
+      <div className="max-w-3xl mx-auto w-full px-5 sm:px-8 py-10 sm:py-16">
+        {/* Boot sequence */}
+        <div className="mb-10 sm:mb-14 flex flex-col gap-1.5 text-sm">
+          <p className="terminal-line boot-0 text-muted text-xs">
+            tox@dev:~$ <span className="text-foreground">whoami</span>
           </p>
-        </div>
-      </header>
-
-      {/* Divider */}
-      <div className="max-w-3xl mx-auto w-full px-6 sm:px-10">
-        <div className="h-px bg-border" />
-      </div>
-
-      {/* Projects */}
-      <main className="flex-1 px-6 sm:px-10 py-10 sm:py-14">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-mono text-xs text-muted uppercase tracking-widest mb-8">
-            Projects
-          </h2>
-
-          <div className="flex flex-col gap-10">
-            {projects.map((project) => (
-              <article
-                key={project.name}
-                className="group"
-                style={{ animation: "fadeIn 0.4s ease-out both" }}
-              >
-                <div className="flex items-baseline gap-3 mb-2">
-                  <h3 className="text-lg sm:text-xl font-sans font-medium">
-                    {project.url ? (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-accent transition-colors"
-                      >
-                        {project.name}
-                        <span className="text-muted text-sm ml-1.5 font-mono">&nearr;</span>
-                      </a>
-                    ) : (
-                      project.name
-                    )}
-                  </h3>
-                  <span className="font-mono text-[11px] text-muted hidden sm:inline">
-                    {project.stats}
-                  </span>
-                </div>
-
-                <p className="text-sm text-muted leading-relaxed mb-3 max-w-2xl">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 text-[11px] font-mono text-neutral-400 border border-border rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
+          <p className="terminal-line boot-1 text-accent text-xs">
+            &gt; Tox — Full-Stack Developer
+          </p>
+          <p className="terminal-line boot-2 text-muted text-xs">
+            tox@dev:~$ <span className="text-foreground">cat about.txt</span>
+          </p>
+          <div className="terminal-line boot-3 mt-1">
+            <p className="text-sm sm:text-base text-foreground leading-relaxed">
+              I build SaaS platforms, AI systems, and real-time
+            </p>
+            <p className="text-sm sm:text-base text-foreground leading-relaxed">
+              applications from scratch — architecture, database,
+            </p>
+            <p className="text-sm sm:text-base text-foreground leading-relaxed">
+              API, frontend, deploy.
+            </p>
           </div>
+          <p className="terminal-line boot-4 text-muted text-xs mt-3">
+            tox@dev:~$ <span className="text-foreground">ls ./projects</span>
+          </p>
+          <p className="terminal-line boot-5 text-accent text-xs">
+            &gt; {projects.length} entries found
+          </p>
+          <div className="terminal-line boot-6 mt-1 h-px bg-border" />
         </div>
-      </main>
 
-      {/* Divider */}
-      <div className="max-w-3xl mx-auto w-full px-6 sm:px-10">
-        <div className="h-px bg-border" />
-      </div>
-
-      {/* Footer */}
-      <footer className="px-6 sm:px-10 py-8 sm:py-10">
-        <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-5">
-            <a
-              href="https://github.com/Tox1469"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-xs text-muted hover:text-foreground transition-colors"
+        {/* Projects */}
+        <div className="flex flex-col gap-8 sm:gap-10">
+          {projects.map((project, i) => (
+            <article
+              key={project.name}
+              className={`terminal-line proj-${i} group relative pl-4 border-l border-border hover:border-accent transition-colors duration-300`}
             >
-              github
-            </a>
-          </div>
-          <p className="font-mono text-[10px] text-neutral-600 uppercase tracking-widest">
-            built by tox
-          </p>
+              <div className="flex items-baseline gap-3 mb-1.5">
+                <h2 className="text-base sm:text-lg font-sans font-medium tracking-tight">
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent transition-colors"
+                    >
+                      {project.name}
+                      <span className="text-muted text-xs ml-1.5">&nearr;</span>
+                    </a>
+                  ) : (
+                    <span className="text-foreground/70">{project.name}</span>
+                  )}
+                </h2>
+                <span className="text-[10px] text-muted hidden sm:inline">
+                  {project.stats}
+                </span>
+              </div>
+
+              <p className="text-xs sm:text-sm text-muted leading-relaxed mb-2.5">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-1.5">
+                {project.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-1.5 py-0.5 text-[10px] text-neutral-500 border border-border rounded group-hover:border-accent/20 group-hover:text-neutral-400 transition-colors"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
-      </footer>
+
+        {/* Footer */}
+        <footer className="terminal-line footer-in mt-14 sm:mt-20 pt-6 border-t border-border">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-4 text-xs">
+              <a
+                href="https://github.com/Tox1469"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-accent transition-colors"
+              >
+                github
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-[10px] text-neutral-700 uppercase tracking-widest">
+              <span>built by tox</span>
+              <span
+                className="inline-block w-1.5 h-3 bg-accent/60"
+                style={{ animation: "blink 1s step-end infinite" }}
+              />
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }

@@ -28,12 +28,58 @@ body {
   color: #000;
 }
 
+/* Terminal cursor blink */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+/* Line fade in from bottom */
+@keyframes lineIn {
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Typing cursor after text */
+@keyframes cursorFade {
+  0%, 100% { border-color: var(--accent); }
+  50% { border-color: transparent; }
+}
+
+/* Scanline subtle effect */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.terminal-line {
+  opacity: 0;
+  animation: lineIn 0.3s ease-out forwards;
+}
+
+/* Stagger delays for boot sequence */
+.boot-0 { animation-delay: 0.1s; }
+.boot-1 { animation-delay: 0.4s; }
+.boot-2 { animation-delay: 0.7s; }
+.boot-3 { animation-delay: 1.0s; }
+.boot-4 { animation-delay: 1.2s; }
+.boot-5 { animation-delay: 1.5s; }
+.boot-6 { animation-delay: 1.8s; }
+
+/* Stagger delays for projects */
+.proj-0 { animation-delay: 2.2s; }
+.proj-1 { animation-delay: 2.5s; }
+.proj-2 { animation-delay: 2.8s; }
+.proj-3 { animation-delay: 3.1s; }
+.proj-4 { animation-delay: 3.4s; }
+.proj-5 { animation-delay: 3.7s; }
+.proj-6 { animation-delay: 4.0s; }
+
+/* Footer */
+.footer-in { animation-delay: 4.4s; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }
