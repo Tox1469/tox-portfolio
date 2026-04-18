@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tox — Full-Stack Developer & Security Engineer",
+  title: "Tox.dev — Full-Stack Development & Security Engineering",
   description:
-    "7 years building SaaS platforms, AI agents, and real-time systems from scratch. Security consulting for banks and enterprises.",
+    "7+ years building SaaS platforms, AI agents, and real-time systems from scratch. Security consulting for banks and enterprises.",
   keywords: [
     "full-stack developer",
     "security engineer",
@@ -28,17 +28,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Tox" }],
   openGraph: {
-    title: "Tox — Full-Stack Developer & Security Engineer",
+    title: "Tox.dev — Full-Stack Development & Security Engineering",
     description:
-      "7 years building production systems. Security consulting for Sicredi, self-checkout for Tozetto, and more.",
+      "7+ years building production systems. Security consulting for Sicredi, self-checkout for Tozetto, and more.",
     type: "website",
     locale: "pt_BR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tox — Full-Stack Developer & Security Engineer",
+    title: "Tox.dev — Full-Stack Development & Security Engineering",
     description:
-      "7 years building production systems. Security consulting for banks and enterprises.",
+      "7+ years building production systems. Security consulting for banks and enterprises.",
   },
   icons: {
     icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2322c55e'>%3E_</text></svg>",

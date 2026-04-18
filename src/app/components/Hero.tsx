@@ -18,7 +18,7 @@ export default function Hero({
 
       <div className="relative z-10 text-center">
         <h1 className="text-6xl sm:text-8xl font-sans font-bold tracking-tight mb-4">
-          <span className="text-accent glow-strong">Tox</span>
+          <span className="text-accent glow-strong">Tox</span><span className="text-foreground/40">.dev</span>
         </h1>
 
         <div className="mb-6">

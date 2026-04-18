@@ -1,7 +1,7 @@
 const i18n = {
   en: {
     hero: {
-      subtitle: "Full-Stack Developer & Security Engineer",
+      subtitle: "Full-Stack Development & Security Engineering",
       stats: "7+ years / 8 apps / 200+ endpoints",
       cta_projects: "View Projects",
       cta_contact: "Get in Touch",
@@ -14,14 +14,14 @@ const i18n = {
       section_title: "cat README.md",
       title: "About",
       bio: [
-        "7 years building production systems from scratch. Architecture, database, API, frontend, deploy — I handle the full stack alone.",
-        "I build SaaS platforms, AI agents, and real-time applications. I also provide security consulting for banks and enterprises.",
-        "The name comes from my work on the Tox encrypted protocol — I audited the security of uTox, a P2P messenger built on end-to-end encryption and zero-trust networking.",
-        "Everything in this portfolio — I designed, developed, and deployed. Solo.",
+        "7+ years building production systems from scratch. Architecture, database, API, frontend, deploy — we handle the full stack.",
+        "We build SaaS platforms, AI agents, and real-time applications. We also provide security consulting for banks and enterprises.",
+        "The name comes from our work on the Tox encrypted protocol — we audited the security of uTox, a P2P messenger built on end-to-end encryption and zero-trust networking.",
+        "Every project in this portfolio — designed, developed, and deployed by Tox.dev.",
       ],
-      how_i_work_title: "How I Work",
+      how_i_work_title: "How We Work",
       how_i_work: [
-        "I architect and code solo — from database schema to deploy pipeline",
+        "Full ownership — from database schema to deploy pipeline",
         "Everything from scratch, no templates, no boilerplate",
         "Security-first: RLS, RBAC, encryption, OWASP from day one",
         "Ship fast, iterate faster — production is the real test",
@@ -67,14 +67,14 @@ const i18n = {
     },
     security: {
       section_title: "cat security.log",
-      description: "Security engineer providing technical security consulting for financial institutions and enterprises. Specialized in infrastructure protection, vulnerability analysis, and compliance implementation.",
+      description: "Technical security consulting for financial institutions and enterprises. Specialized in infrastructure protection, vulnerability analysis, and compliance implementation.",
       sicredi: "Banking security infrastructure",
       tozetto: "Self-checkout system implementation",
     },
   },
   pt: {
     hero: {
-      subtitle: "Desenvolvedor Full-Stack & Engenheiro de Segurança",
+      subtitle: "Desenvolvimento Full-Stack & Engenharia de Segurança",
       stats: "7+ anos / 8 apps / 200+ endpoints",
       cta_projects: "Ver Projetos",
       cta_contact: "Contato",
@@ -87,17 +87,17 @@ const i18n = {
       section_title: "cat README.md",
       title: "Sobre",
       bio: [
-        "7 anos construindo sistemas em produção do zero. Arquitetura, banco de dados, API, frontend, deploy — cuido de todo o stack sozinho.",
-        "Construí plataformas SaaS, agentes de IA e aplicações em tempo real. Também presto consultoria de segurança para bancos e empresas.",
-        "O nome vem do meu trabalho no protocolo Tox — fiz a auditoria de segurança do uTox, um mensageiro P2P construído com criptografia ponta-a-ponta e rede zero-trust.",
-        "Tudo nesse portfólio — eu projetei, desenvolvi e fiz deploy. Sozinho.",
+        "7+ anos construindo sistemas em produção do zero. Arquitetura, banco de dados, API, frontend, deploy — cuidamos de todo o stack.",
+        "Construímos plataformas SaaS, agentes de IA e aplicações em tempo real. Também prestamos consultoria de segurança para bancos e empresas.",
+        "O nome vem do nosso trabalho no protocolo Tox — fizemos a auditoria de segurança do uTox, um mensageiro P2P construído com criptografia ponta-a-ponta e rede zero-trust.",
+        "Cada projeto nesse portfólio — projetado, desenvolvido e entregue pela Tox.dev.",
       ],
-      how_i_work_title: "Como Trabalho",
+      how_i_work_title: "Como Trabalhamos",
       how_i_work: [
-        "Arquiteto e codifico sozinho — do schema do banco ao pipeline de deploy",
+        "Ownership total — do schema do banco ao pipeline de deploy",
         "Tudo do zero, sem templates, sem boilerplate",
         "Segurança desde o dia 1: RLS, RBAC, criptografia, OWASP",
-        "Entrego rápido, itero mais rápido — produção é o teste real",
+        "Entrega rápida, iteração mais rápida — produção é o teste real",
       ],
       currently_title: "Atualmente",
       currently: "Construindo plataformas de agentes IA e consultoria de segurança para instituições financeiras.",
@@ -140,7 +140,7 @@ const i18n = {
     },
     security: {
       section_title: "cat seguranca.log",
-      description: "Engenheiro de segurança fornecendo consultoria técnica de segurança para instituições financeiras e empresas. Especializado em proteção de infraestrutura, análise de vulnerabilidades e implementação de conformidade.",
+      description: "Consultoria técnica de segurança para instituições financeiras e empresas. Especialização em proteção de infraestrutura, análise de vulnerabilidades e implementação de conformidade.",
       sicredi: "Infraestrutura de segurança bancária",
       tozetto: "Implementação de sistema self-checkout",
     },
