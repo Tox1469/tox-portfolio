@@ -211,6 +211,16 @@ body {
   border-right: 2px solid var(--accent);
 }
 
+@media (max-width: 640px) {
+  .typing-container {
+    white-space: normal;
+    animation: none;
+    border-right: none;
+    opacity: 1;
+    width: auto;
+  }
+}
+
 /* Scroll indicator bounce */
 @keyframes scrollBounce {
   0%, 100% { transform: translateY(0); opacity: 0.4; }
