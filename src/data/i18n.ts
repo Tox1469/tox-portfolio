@@ -16,6 +16,7 @@ const i18n = {
       bio: [
         "7 years building production systems from scratch. Architecture, database, API, frontend, deploy — I handle the full stack alone.",
         "I build SaaS platforms, AI agents, and real-time applications. I also provide security consulting for banks and enterprises.",
+        "The name comes from my work on the Tox encrypted protocol — I audited the security of uTox, a P2P messenger built on end-to-end encryption and zero-trust networking.",
         "Everything in this portfolio — I designed, developed, and deployed. Solo.",
       ],
       how_i_work_title: "How I Work",
@@ -88,6 +89,7 @@ const i18n = {
       bio: [
         "7 anos construindo sistemas em produção do zero. Arquitetura, banco de dados, API, frontend, deploy — cuido de todo o stack sozinho.",
         "Construí plataformas SaaS, agentes de IA e aplicações em tempo real. Também presto consultoria de segurança para bancos e empresas.",
+        "O nome vem do meu trabalho no protocolo Tox — fiz a auditoria de segurança do uTox, um mensageiro P2P construído com criptografia ponta-a-ponta e rede zero-trust.",
         "Tudo nesse portfólio — eu projetei, desenvolvi e fiz deploy. Sozinho.",
       ],
       how_i_work_title: "Como Trabalho",

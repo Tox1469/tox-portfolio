@@ -22,6 +22,9 @@ const COMMANDS: Record<Lang, Record<string, string[]>> = {
     whoami: [
       "Tox — Full-Stack Developer",
       "",
+      "The name comes from the Tox encrypted protocol.",
+      "I audited the security of uTox — P2P, E2E, zero-trust.",
+      "",
       "7 years building production systems from scratch.",
       "Architecture, database, API, frontend, deploy.",
       "",
@@ -119,6 +122,9 @@ const COMMANDS: Record<Lang, Record<string, string[]>> = {
     ],
     whoami: [
       "Tox — Desenvolvedor Full-Stack",
+      "",
+      "O nome vem do protocolo Tox de criptografia.",
+      "Fiz a auditoria de segurança do uTox — P2P, E2E, zero-trust.",
       "",
       "7 anos construindo sistemas em produção do zero.",
       "Arquitetura, banco de dados, API, frontend, deploy.",
