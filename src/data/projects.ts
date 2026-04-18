@@ -14,6 +14,44 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "utox",
+    name: "uTox",
+    tagline: { en: "Encrypted P2P Messenger — Security Audit", pt: "Mensageiro P2P Criptografado — Auditoria de Segurança" },
+    description: {
+      en: "Security auditing and implementation for uTox, a lightweight C client for the Tox protocol. Tox is a peer-to-peer encrypted communication protocol that enables text, voice, video, and file transfers without central servers — all traffic is end-to-end encrypted using NaCl (libsodium) and peers are discovered via a distributed hash table (DHT). My first project and entry point into security engineering.",
+      pt: "Auditoria de segurança e implementação para o uTox, um cliente leve em C para o protocolo Tox. Tox é um protocolo de comunicação criptografada peer-to-peer que permite texto, voz, vídeo e transferência de arquivos sem servidores centrais — todo o tráfego é criptografado ponta-a-ponta usando NaCl (libsodium) e peers são descobertos via tabela hash distribuída (DHT). Meu primeiro projeto e porta de entrada na engenharia de segurança.",
+    },
+    problem: {
+      en: "The Tox protocol and its clients needed independent security auditing to ensure the encryption implementation was sound, the peer-to-peer architecture had no exploitable weaknesses, and the C codebase had no memory safety vulnerabilities that could compromise user privacy.",
+      pt: "O protocolo Tox e seus clientes precisavam de auditoria de segurança independente para garantir que a implementação da criptografia era sólida, a arquitetura peer-to-peer não tinha vulnerabilidades exploráveis, e o codebase em C não tinha falhas de segurança de memória que pudessem comprometer a privacidade dos usuários.",
+    },
+    solution: {
+      en: "Conducted a comprehensive security audit of the Tox protocol and implemented security hardening in the uTox client. Reviewed the cryptographic implementation (NaCl/libsodium), analyzed the DHT peer discovery for potential attack vectors, audited the C codebase for buffer overflows, use-after-free, and other memory safety issues. This was my first project — it shaped my entire approach to security-first development.",
+      pt: "Realizei uma auditoria de segurança abrangente do protocolo Tox e implementei hardening de segurança no cliente uTox. Revisei a implementação criptográfica (NaCl/libsodium), analisei o DHT de descoberta de peers para vetores de ataque, auditei o codebase em C para buffer overflows, use-after-free e outras falhas de segurança de memória. Este foi meu primeiro projeto — moldou toda minha abordagem de desenvolvimento security-first.",
+    },
+    decisions: {
+      en: [
+        "Protocol-level audit first — understanding the cryptographic foundations before reviewing client implementation ensured no false sense of security from correct code on a flawed protocol",
+        "Focus on memory safety in C — manual memory management in C is the primary attack surface for a security-critical application, so buffer overflows and use-after-free were top priority",
+        "DHT analysis for privacy — peer discovery via distributed hash table can leak metadata even with encrypted payloads, requiring careful analysis of what information is exposed during the handshake",
+      ],
+      pt: [
+        "Auditoria no nível do protocolo primeiro — entender as fundações criptográficas antes de revisar a implementação do cliente garantiu que não houvesse falsa sensação de segurança por código correto em um protocolo falho",
+        "Foco em segurança de memória em C — gerenciamento manual de memória em C é a superfície de ataque primária para uma aplicação crítica de segurança, então buffer overflows e use-after-free foram prioridade máxima",
+        "Análise do DHT para privacidade — descoberta de peers via tabela hash distribuída pode vazar metadados mesmo com payloads criptografados, exigindo análise cuidadosa de quais informações são expostas durante o handshake",
+      ],
+    },
+    stack: [
+      { category: "Language", items: ["C"], context: { en: "Low-level systems programming, manual memory management", pt: "Programação de sistemas low-level, gerenciamento manual de memória" } },
+      { category: "Crypto", items: ["NaCl", "libsodium"], context: { en: "End-to-end encryption, key exchange, authentication", pt: "Criptografia ponta-a-ponta, troca de chaves, autenticação" } },
+      { category: "Network", items: ["DHT", "UDP", "P2P"], context: { en: "Decentralized peer discovery, no central servers", pt: "Descoberta de peers descentralizada, sem servidores centrais" } },
+      { category: "Security", items: ["Pentesting", "Code Audit", "Memory Safety"], context: { en: "Buffer overflow analysis, cryptographic review", pt: "Análise de buffer overflow, revisão criptográfica" } },
+    ],
+    url: "https://github.com/uTox/uTox",
+    stats: { routes: "—", migrations: "—", crons: "—" },
+    color: "#3b82f6",
+  },
+  {
     slug: "agentbox",
     name: "AgentBox",
     tagline: { en: "AI Agent Platform", pt: "Plataforma de Agentes IA" },
