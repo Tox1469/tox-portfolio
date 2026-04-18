@@ -233,13 +233,12 @@ export default function Terminal({ onProjectsCommand }: { onProjectsCommand: () 
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (booted) return;
+
     if (bootIndex >= BOOT_LINES.length) {
-      const welcomeMsg = lang === "en"
-        ? 'Welcome. Type "help" for commands.'
-        : 'Bem-vindo. Digite "help" para ver comandos.';
       setLines((prev) => [
         ...prev,
-        { text: welcomeMsg, type: "accent" },
+        { text: 'Welcome. Type "help" for commands.', type: "accent" },
         { text: "", type: "system" },
       ]);
       setBooted(true);
@@ -255,7 +254,7 @@ export default function Terminal({ onProjectsCommand }: { onProjectsCommand: () 
     }, currentDelay);
 
     return () => clearTimeout(timer);
-  }, [bootIndex, lang]);
+  }, [bootIndex, booted]);
 
   useEffect(() => {
     if (scrollRef.current) {
