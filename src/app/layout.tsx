@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tox — Full-Stack Developer & Security Engineer",
     description:
-      "7 years building production systems. Security consulting for Sicredi, Tozetto, and more.",
+      "7 years building production systems. Security consulting for Sicredi, self-checkout for Tozetto, and more.",
     type: "website",
     locale: "pt_BR",
   },

@@ -68,7 +68,7 @@ const i18n = {
       section_title: "cat security.log",
       description: "Security engineer providing technical security consulting for financial institutions and enterprises. Specialized in infrastructure protection, vulnerability analysis, and compliance implementation.",
       sicredi: "Banking security infrastructure",
-      tozetto: "Retail chain security systems",
+      tozetto: "Self-checkout system implementation",
     },
   },
   pt: {
@@ -140,7 +140,7 @@ const i18n = {
       section_title: "cat seguranca.log",
       description: "Engenheiro de segurança fornecendo consultoria técnica de segurança para instituições financeiras e empresas. Especializado em proteção de infraestrutura, análise de vulnerabilidades e implementação de conformidade.",
       sicredi: "Infraestrutura de segurança bancária",
-      tozetto: "Sistemas de segurança para varejo",
+      tozetto: "Implementação de sistema self-checkout",
     },
   },
 } as const;
