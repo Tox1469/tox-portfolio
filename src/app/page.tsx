@@ -1,141 +1,168 @@
-const projects = [
-  {
-    name: "AgentBox",
-    description: "Multi-tenant SaaS for AI agents. 50+ templates, pipelines, WhatsApp/SMS, social media, internal chat, document generation, integrations.",
-    stack: ["Next.js", "Supabase", "Gemini", "Tailwind", "Vercel"],
-    url: "https://agentbox.com.br",
-    stats: "144 endpoints / 62 migrations",
-  },
-  {
-    name: "CreevoHub",
-    description: "Hiring platform for construction industry. NR/medical compliance, multi-tenant dashboards, AI candidate screening.",
-    stack: ["Next.js", "Supabase", "Tailwind", "Vercel"],
-    url: "https://creevo.com.br",
-    stats: "Multi-tenant / RBAC",
-  },
-  {
-    name: "Creevo Academy",
-    description: "Training platform specialized in Normas Regulamentadoras. Course management, certifications, company dashboards.",
-    stack: ["Next.js", "Supabase", "Tailwind", "Vercel"],
-    url: "https://creevoacademy.com.br",
-    stats: "LMS / Certifications",
-  },
-  {
-    name: "TAS Ocupacional",
-    description: "Occupational health company website. Service showcase, contact integration, premium design.",
-    stack: ["React", "Vite", "Framer Motion", "Vercel"],
-    url: "https://tasocupacional.com.br",
-    stats: "Landing / WhatsApp integration",
-  },
-  {
-    name: "ToxBets",
-    description: "Casino platform with Texas Hold'em poker (AI bots, tournaments, chip economy), Mines, Blackjack, Double, and 7+ more games. Real-time multiplayer via SSE.",
-    stack: ["Next.js", "Redis", "SSE", "Tailwind"],
-    url: null,
-    stats: "10+ games / Elo ranking",
-  },
-  {
-    name: "AppForm",
-    description: "SaaS for clinic management. AI-powered WhatsApp bot for appointment scheduling, Google Calendar sync, patient management.",
-    stack: ["Next.js", "Supabase", "Twilio", "Google Calendar"],
-    url: null,
-    stats: "WhatsApp bot / Multi-clinic",
-  },
+"use client";
+
+import { useRef } from "react";
+import { useLang } from "@/contexts/LangContext";
+import { projects } from "@/data/projects";
+import Hero from "./components/Hero";
+import Terminal from "./components/Terminal";
+import About from "./components/About";
+import Stats from "./components/Stats";
+import ProjectCard from "./components/ProjectCard";
+import ScrollReveal from "./components/ScrollReveal";
+
+const techStack = [
+  { key: "languages", items: ["TypeScript", "JavaScript", "Python", "SQL", "Lua"] },
+  { key: "frontend", items: ["Next.js", "React", "Tailwind", "Framer Motion"] },
+  { key: "backend", items: ["Node.js", "REST APIs", "SSE", "WebSockets"] },
+  { key: "database", items: ["PostgreSQL", "Supabase", "Redis", "Prisma"] },
+  { key: "ai", items: ["Gemini", "Claude", "OpenAI", "RAG", "Embeddings"] },
+  { key: "security", items: ["Pentesting", "OWASP", "RBAC", "MFA", "RLS"] },
+  { key: "infra", items: ["Vercel", "Docker", "CI/CD", "Cloudflare"] },
+  { key: "integrations", items: ["Twilio", "HubSpot", "Slack", "Notion", "Google APIs"] },
 ];
 
+const securitySkills = ["Pentesting", "OWASP", "MFA/OAuth2", "RLS", "RBAC", "Criptografia", "LGPD", "DDoS Mitigation", "Prompt Injection Prevention"];
+
 export default function Home() {
+  const projectsRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLElement>(null);
+  const { t } = useLang();
+
+  const scrollToProjects = () => {
+    projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    footerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex flex-col min-h-screen font-mono">
-      {/* Scanline overlay */}
-      <div
-        className="pointer-events-none fixed inset-0 z-50 opacity-[0.03]"
-        style={{
-          background: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.05) 2px, rgba(255,255,255,0.05) 4px)",
-        }}
-      />
+    <div className="scanlines flex flex-col min-h-screen">
+      <Hero onProjectsClick={scrollToProjects} onContactClick={scrollToContact} />
 
-      <div className="max-w-3xl mx-auto w-full px-5 sm:px-8 py-10 sm:py-16">
-        {/* Boot sequence */}
-        <div className="mb-10 sm:mb-14 flex flex-col gap-1.5 text-sm">
-          <p className="terminal-line boot-0 text-muted text-xs">
-            tox@dev:~$ <span className="text-foreground">whoami</span>
-          </p>
-          <p className="terminal-line boot-1 text-accent text-xs">
-            &gt; Tox — Full-Stack Developer
-          </p>
-          <p className="terminal-line boot-2 text-muted text-xs">
-            tox@dev:~$ <span className="text-foreground">cat about.txt</span>
-          </p>
-          <div className="terminal-line boot-3 mt-1">
-            <p className="text-sm sm:text-base text-foreground leading-relaxed">
-              I build SaaS platforms, AI systems, and real-time
+      <div className="max-w-3xl mx-auto w-full px-5 sm:px-8">
+        <ScrollReveal>
+          <section className="py-16 sm:py-20">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="font-mono text-xs text-accent glow">$</span>
+              <h2 className="font-mono text-xs text-muted uppercase tracking-widest">
+                {t.terminal.section_title}
+              </h2>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+
+            <Terminal onProjectsCommand={scrollToProjects} />
+
+            <p className="font-mono text-[10px] text-muted/50 mt-3 text-center">
+              {t.terminal.hint}
             </p>
-            <p className="text-sm sm:text-base text-foreground leading-relaxed">
-              applications from scratch — architecture, database,
-            </p>
-            <p className="text-sm sm:text-base text-foreground leading-relaxed">
-              API, frontend, deploy.
-            </p>
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="pb-16 sm:pb-20">
+            <About />
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <div className="divider-glow mb-12" />
+          <Stats />
+          <div className="divider-glow mt-12" />
+        </ScrollReveal>
+
+        <section ref={projectsRef} className="py-16 sm:py-20">
+          <ScrollReveal>
+            <div className="flex items-center gap-3 mb-10">
+              <span className="font-mono text-xs text-accent glow">$</span>
+              <h2 className="font-mono text-xs text-muted uppercase tracking-widest">
+                {t.projects.section_title}
+              </h2>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+          </ScrollReveal>
+
+          <div className="flex flex-col gap-6">
+            {projects.map((project, i) => (
+              <ScrollReveal key={project.slug} delay={i * 80}>
+                <ProjectCard project={project} />
+              </ScrollReveal>
+            ))}
           </div>
-          <p className="terminal-line boot-4 text-muted text-xs mt-3">
-            tox@dev:~$ <span className="text-foreground">ls ./projects</span>
-          </p>
-          <p className="terminal-line boot-5 text-accent text-xs">
-            &gt; {projects.length} entries found
-          </p>
-          <div className="terminal-line boot-6 mt-1 h-px bg-border" />
-        </div>
+        </section>
 
-        {/* Projects */}
-        <div className="flex flex-col gap-8 sm:gap-10">
-          {projects.map((project, i) => (
-            <article
-              key={project.name}
-              className={`terminal-line proj-${i} group relative pl-4 border-l border-border hover:border-accent transition-colors duration-300`}
-            >
-              <div className="flex items-baseline gap-3 mb-1.5">
-                <h2 className="text-base sm:text-lg font-sans font-medium tracking-tight">
-                  {project.url ? (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-accent transition-colors"
-                    >
-                      {project.name}
-                      <span className="text-muted text-xs ml-1.5">&nearr;</span>
-                    </a>
-                  ) : (
-                    <span className="text-foreground/70">{project.name}</span>
-                  )}
-                </h2>
-                <span className="text-[10px] text-muted hidden sm:inline">
-                  {project.stats}
-                </span>
-              </div>
+        <ScrollReveal>
+          <section className="pb-16 sm:pb-20">
+            <div className="flex items-center gap-3 mb-10">
+              <span className="font-mono text-xs text-accent glow">$</span>
+              <h2 className="font-mono text-xs text-muted uppercase tracking-widest">
+                {t.skills.section_title}
+              </h2>
+              <div className="flex-1 h-px bg-border" />
+            </div>
 
-              <p className="text-xs sm:text-sm text-muted leading-relaxed mb-2.5">
-                {project.description}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              {techStack.map((group) => (
+                <div key={group.key}>
+                  <h3 className="font-mono text-[10px] text-accent uppercase tracking-widest mb-3">
+                    {t.skills.categories[group.key as keyof typeof t.skills.categories]}
+                  </h3>
+                  <div className="flex flex-col gap-1">
+                    {group.items.map((item) => (
+                      <span key={item} className="font-mono text-xs text-muted hover:text-foreground transition-colors">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <section className="pb-16 sm:pb-20">
+            <div className="flex items-center gap-3 mb-10">
+              <span className="font-mono text-xs text-accent glow">$</span>
+              <h2 className="font-mono text-xs text-muted uppercase tracking-widest">
+                {t.security.section_title}
+              </h2>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+
+            <div className="border border-border rounded-lg p-5 sm:p-6 bg-surface">
+              <p className="text-sm text-foreground leading-relaxed mb-4">
+                {t.security.description}
               </p>
 
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
+                <div className="border border-border rounded-md p-3">
+                  <p className="font-mono text-xs text-accent mb-1">Sicredi</p>
+                  <p className="text-[11px] text-muted">{t.security.sicredi}</p>
+                </div>
+                <div className="border border-border rounded-md p-3">
+                  <p className="font-mono text-xs text-accent mb-1">Tozetto Mercados</p>
+                  <p className="text-[11px] text-muted">{t.security.tozetto}</p>
+                </div>
+              </div>
+
               <div className="flex flex-wrap gap-1.5">
-                {project.stack.map((tech) => (
+                {securitySkills.map((skill) => (
                   <span
-                    key={tech}
-                    className="px-1.5 py-0.5 text-[10px] text-neutral-500 border border-border rounded group-hover:border-accent/20 group-hover:text-neutral-400 transition-colors"
+                    key={skill}
+                    className="tag px-2 py-0.5 text-[10px] font-mono text-accent-dim border border-accent-dim/30 rounded"
                   >
-                    {tech}
+                    {skill}
                   </span>
                 ))}
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
+          </section>
+        </ScrollReveal>
 
-        {/* Footer */}
-        <footer className="terminal-line footer-in mt-14 sm:mt-20 pt-6 border-t border-border">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-4 text-xs">
+        <footer ref={footerRef} className="pb-10 sm:pb-14 pt-6 border-t border-border">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-5 text-xs font-mono">
               <a
                 href="https://github.com/Tox1469"
                 target="_blank"
@@ -144,12 +171,18 @@ export default function Home() {
               >
                 github
               </a>
+              <a
+                href="mailto:tox@toxia.com.br"
+                className="text-muted hover:text-accent transition-colors"
+              >
+                tox@toxia.com.br
+              </a>
             </div>
-            <div className="flex items-center gap-2 text-[10px] text-neutral-700 uppercase tracking-widest">
+            <div className="flex items-center gap-2 text-[10px] font-mono text-neutral-700 uppercase tracking-widest">
               <span>built by tox</span>
               <span
                 className="inline-block w-1.5 h-3 bg-accent/60"
-                style={{ animation: "blink 1s step-end infinite" }}
+                style={{ animation: "blink 0.8s step-end infinite" }}
               />
             </div>
           </div>
